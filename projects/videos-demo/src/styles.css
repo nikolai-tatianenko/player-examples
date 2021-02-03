@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.main-navigation ul li {
+  display: inline-block;
+  margin: 10px;
+}
