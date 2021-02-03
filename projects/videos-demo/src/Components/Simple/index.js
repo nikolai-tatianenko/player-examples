@@ -21,13 +21,6 @@ const SimplePlayer = ({
   const [state, setState] = useState({});
   const [context, setContext] = useContext(PlayerContext);
 
-  /*const {
-    //url,
-    //playing = true,
-    //controls = true,
-    //light,
-    
-  } = state;*/
   useEffect(() => {
     setState({
       url: url,
@@ -36,18 +29,15 @@ const SimplePlayer = ({
       controls: controls,
       pip: pip,
     });
-    //value[url] = playing;
 
     setContext([...context, { url: url, playing: playing }]);
-    //context[url] = { url: url, playing: playing };
-    //    setContext(context);
+
     console.log("CONTEXT VALUE", context, { url: url, playing: playing });
   }, [url]);
 
-  //useEffect(() => {}, context);
   function setPlaying(url, context, setContext) {
     for (let value of context) {
-      if (value.url == url) {
+      if (value.url === url) {
         value.playing = true;
       } else {
         value.playing = false;
@@ -55,25 +45,24 @@ const SimplePlayer = ({
     }
     console.log("value!!", context);
   }
+
   const handlePlay = () => {
-    //context[url].playing = true;
     setPlaying(url, context, setContext);
     console.log("onPlay", context);
     setState({ playing: true });
   };
 
   const handlePause = () => {
-    console.log("onPlay");
-    setState({ playing: true });
+    console.log("onPause");
+    setState({ playing: false });
   };
 
   const handleEnded = () => {
     console.log("onEnded");
     setState({ playing: state.loop });
   };
+
   const handleProgress = (state) => {
-    //console.log("onProgress", state);
-    // We only want to update time slider if we are not currently seeking
     if (!state.seeking) {
       setState(state);
     }
@@ -86,22 +75,16 @@ const SimplePlayer = ({
 
   const handlePlayPause = () => {
     setState({ playing: !state.playing });
-    // handlePlayPause
   };
 
   const handleStop = () => {
     setState({ url: null, playing: false });
   };
-  /**
-   * <button onClick={handleStop}>Stop</button>
-      <button onClick={handlePlayPause}>{playing ? "Pause" : "Play"}</button>
-   */
-  //if (!showPlayer) {
-  //    return null;
-  //  }
-  if (!url) {
-    return <h1>no videos</h1>;
+
+  if (!showPlayer || !url) {
+    return null;
   }
+
   return (
     <>
       <ReactPlayer
@@ -110,7 +93,6 @@ const SimplePlayer = ({
         playing={state.playing}
         controls={state.controls}
         light={state.light}
-        //      config={{ vimeo: { playerOptions: { portrait: false } } }}
         onReady={() => console.log("onReady")}
         onStart={() => console.log("onStart")}
         onPlay={handlePlay}
