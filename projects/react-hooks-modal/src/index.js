@@ -9,19 +9,19 @@ const App = () => {
       <ModalPlayer
         key={"left"}
         thumbnailType={"https://picsum.photos/200/300"}
-        url={"https://vimeo.com/291715535"}
+        url={"https://vimeo.com/347119375"}
       />
       <hr />
       <ModalPlayer
         key={"right"}
         thumbnailType={"https://picsum.photos/200/301"}
-        url={"https://vimeo.com/266395503"}
+        url={"https://vimeo.com/347119375"}
       />
       <hr />
       <ModalPlayer
         key={"right"}
         thumbnailType={false}
-        url={"https://vimeo.com/266395503"}
+        url={"https://vimeo.com/347119375"}
       />
     </div>
   );

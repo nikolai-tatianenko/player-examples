@@ -1,16 +1,17 @@
-import "./styles.css";
-import React, { useState, useContext } from "react";
+import './styles.css';
+import React, { useState } from 'react';
 import {
-  Simple,
-  Modal,
-  DefaultDemo,
-  Corp,
   CarouselVideo,
+  DefaultDemo,
   ImageVideo,
-} from "./Components";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import PlayerContext from "./playerContext";
-import cmsSettings from "./cmsSettings";
+  Modal,
+  Simple,
+} from './Components';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PlayerContext from './playerContext';
+import cmsSettings from './cmsSettings';
+import { Menu } from './Menu';
+
 console.log("cms settings", cmsSettings);
 const UrlsMap = [
   {
@@ -18,38 +19,7 @@ const UrlsMap = [
     name: "Home",
     component: Simple,
   },
-  {
-    url: "/corp",
-    name: "Corp",
-    component: Corp,
-  },
 ];
-const Menu = () => {
-  return (
-    <nav className="main-navigation">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/modal">modal</Link>
-        </li>
-        <li>
-          <Link to="/custom-controls">With Custom Controls</Link>
-        </li>
-        <li>
-          <Link to="/videos">2 videos</Link>
-        </li>
-        <li>
-          <Link to="/default-demo">Default Demo</Link>
-        </li>
-        <li>
-          <Link to="/carousel">Carousel</Link>
-        </li>
-      </ul>
-    </nav>
-  );
-};
 
 export default function App() {
   const [showPlayer, setShowPlaye] = useState(true);
@@ -82,7 +52,7 @@ export default function App() {
               <button onClick={() => setShowPlaye(!showPlayer)}>cilck</button>
               <h2> With default thumbnail</h2>
               <Simple
-                url={"https://vimeo.com/162427937"}
+                url={"https://vimeo.com/347119375"}
                 showPlayer={showPlayer}
                 light={true}
               />

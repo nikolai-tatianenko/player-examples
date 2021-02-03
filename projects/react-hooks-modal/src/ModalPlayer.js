@@ -30,15 +30,15 @@ const Player = ({ url, thumbnailType = false }) => {
           modal: {
             maxWidth: "unset",
             width: "100%",
-            padding: "unset"
+            padding: "unset",
           },
           overlay: {
-            background: "rgba(0, 0, 0, 0.5)"
+            background: "rgba(0, 0, 0, 0.5)",
           },
           closeButton: {
             background: "red",
-            color: "white"
-          }
+            color: "white",
+          },
         }}
         center
       >

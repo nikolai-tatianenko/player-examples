@@ -1,5 +1,5 @@
 import "../../styles.css";
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import PlayerContext from "../../playerContext";
 const SimplePlayer = ({
