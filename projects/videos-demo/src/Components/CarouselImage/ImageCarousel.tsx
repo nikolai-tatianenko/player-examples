@@ -2,6 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 
 export type ImageType = { id: number; url: string };
 
+/**
+ * Image carousel component.
+ * @component
+ * @param {Object} props - The component props.
+ * @param {ImageType[]} props.images - The array of images for the carousel.
+ * @returns {JSX.Element} The rendered component.
+ */
 const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedImage, setSelectedImage] = useState<ImageType>();
