@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ImageCarousel, { ImageType } from "./video-carousel";
+import ImageCarousel, { ImageType } from "./VideoCarousel";
 import "./styles.css";
 
 export default function App() {
