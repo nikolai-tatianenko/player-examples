@@ -2,7 +2,6 @@ import './styles.css';
 import React, { useState } from 'react';
 import {
   CarouselVideo,
-  DefaultDemo,
   ImageVideo,
   Modal,
   Simple,
@@ -40,9 +39,6 @@ export default function App() {
             </Route>
             <Route path="/modal">
               <Modal />
-            </Route>
-            <Route path="/default-demo">
-              <DefaultDemo />
             </Route>
             <Route path="/gcad">
               <Simple />
