@@ -1,15 +1,10 @@
-import './styles.css';
-import React, { useState } from 'react';
-import {
-  CarouselVideo,
-  ImageVideo,
-  Modal,
-  Simple,
-} from './Components';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import PlayerContext from './playerContext';
-import cmsSettings from './cmsSettings';
-import { Menu } from './Menu';
+import "./styles.css";
+import React, { useState } from "react";
+import { CarouselVideo, ImageVideo, Modal, Simple } from "./Components";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import PlayerContext from "./playerContext";
+import cmsSettings from "./cmsSettings";
+import { Menu } from "./Menu";
 
 console.log("cms settings", cmsSettings);
 const UrlsMap = [

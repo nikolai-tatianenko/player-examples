@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 /**
  * Component for the carousel controls.
@@ -22,8 +22,8 @@ export const CarouselControls = ({
   };
 
   const handleLeftClick = () => {
-    const newIdx = (selectedImageIndex - 1 + (images?.length || 1)) %
-      (images?.length || 1);
+    const newIdx =
+      (selectedImageIndex - 1 + (images?.length || 1)) % (images?.length || 1);
     handleSelectedImageChange(newIdx);
   };
 

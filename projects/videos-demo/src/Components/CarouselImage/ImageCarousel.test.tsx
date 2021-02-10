@@ -20,7 +20,9 @@ describe("ImageCarousel", () => {
   });
 
   it("changes the selected image on left click", () => {
-    const { getByText, getByTestId } = render(<ImageCarousel images={images} />);
+    const { getByText, getByTestId } = render(
+      <ImageCarousel images={images} />
+    );
     const selectedImage = getByTestId("selected-image");
     const leftButton = getByText("Prev");
 
@@ -30,7 +32,9 @@ describe("ImageCarousel", () => {
   });
 
   it("changes the selected image on right click", () => {
-    const { getByText, getByTestId } = render(<ImageCarousel images={images} />);
+    const { getByText, getByTestId } = render(
+      <ImageCarousel images={images} />
+    );
     const selectedImage = getByTestId("selected-image");
     const rightButton = getByText("Next");
 

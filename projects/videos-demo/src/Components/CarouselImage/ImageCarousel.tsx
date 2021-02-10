@@ -16,7 +16,10 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
 
   useEffect(() => {
     if (images?.[0]) {
-      carouselItemsRef.current = carouselItemsRef.current.slice(0, images.length);
+      carouselItemsRef.current = carouselItemsRef.current.slice(
+        0,
+        images.length
+      );
       setSelectedImageIndex(0);
       setSelectedImage(images[0]);
     }
@@ -35,7 +38,8 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
   };
 
   const handleLeftClick = () => {
-    const newIdx = (selectedImageIndex - 1 + (images?.length || 1)) % (images?.length || 1);
+    const newIdx =
+      (selectedImageIndex - 1 + (images?.length || 1)) % (images?.length || 1);
     handleSelectedImageChange(newIdx);
   };
 

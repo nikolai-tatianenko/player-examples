@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import ReactPlayer from 'react-player';
+import React, { useEffect, useState } from "react";
+import ReactPlayer from "react-player";
 
 /**
  * Component for the React Player carousel.
@@ -39,7 +39,9 @@ const ReactPlayerCarousel = ({ images, options }) => {
         playing
         controls
         onEnded={() => {
-          handleSelectedImageChange((selectedImageIndex + 1) % (images?.length || 1));
+          handleSelectedImageChange(
+            (selectedImageIndex + 1) % (images?.length || 1)
+          );
         }}
         url={selectedImage?.url}
       />
