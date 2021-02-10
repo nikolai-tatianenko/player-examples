@@ -1,25 +1,11 @@
-import "../../styles.css";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ReactPlayer from "react-player";
 import PlayerContext from "../../playerContext";
 
 /**
  * SimplePlayer component.
- * @param {Object} props - The component props.
- * @param {string} props.url - The URL of the video.
- * @param {boolean} [props.showPlayer=true] - Flag indicating whether to show the player.
- * @param {boolean} [props.playing=false] - Flag indicating whether the video is playing.
- * @param {boolean} [props.light=false] - Flag indicating whether to show the video as a light version.
- * @param {boolean} [props.controls=true] - Flag indicating whether to show controls.
- * @param {number} [props.volume] - The volume level.
- * @param {boolean} [props.muted=false] - Flag indicating whether the video is muted.
- * @param {boolean} [props.loop=false] - Flag indicating whether to loop the video.
- * @param {boolean} [props.played=false] - Flag indicating whether the video has been played.
- * @param {*} [props.loaded] - Loaded state.
- * @param {*} [props.duration] - The duration of the video.
- * @param {number} [props.playbackRate] - The playback rate of the video.
- * @param {boolean} [props.pip=false] - Flag indicating whether to enable picture-in-picture mode.
- * @param {*} otherProps - Additional props.
+ * @param {string} url - The URL of the video.
+ * @param {*} props - Video settings Props.
  * @returns {JSX.Element | null} - The rendered component.
  */
 const SimplePlayer = ({
