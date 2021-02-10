@@ -10,7 +10,7 @@ import React from 'react';
  * @param {Function} props.handleSelectedImageChange - The callback function for handling image selection changes.
  * @returns {JSX.Element|null} The rendered component.
  */
-const CarouselControls = ({
+export const CarouselControls = ({
   controls,
   images,
   selectedImageIndex,
@@ -48,3 +48,5 @@ const CarouselControls = ({
     </>
   );
 };
+
+export default CarouselControls;

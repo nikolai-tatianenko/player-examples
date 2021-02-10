@@ -1,67 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
-import ReactPlayer from "react-player";
+import React, { useEffect, useState } from 'react';
+import ReactPlayer from 'react-player';
 
-export type ImageType = {
-  id: number;
-  url: string;
-  title: string;
-};
-
-const CarouselContols: React.FC = ({
-  controls,
-  images,
-  selectedImageIndex,
-  handleSelectedImageChange,
-}) => {
-  const handleRightClick = () => {
-    if (images && images.length > 0) {
-      let newIdx = selectedImageIndex + 1;
-      if (newIdx >= images.length) {
-        newIdx = 0;
-      }
-      handleSelectedImageChange(newIdx);
-    }
-  };
-
-  const handleLeftClick = () => {
-    if (images && images.length > 0) {
-      let newIdx = selectedImageIndex - 1;
-      if (newIdx < 0) {
-        newIdx = images.length - 1;
-      }
-      handleSelectedImageChange(newIdx);
-    }
-  };
-
-  if (!controls) {
-    //return null;
-  }
-  return (
-    <>
-      <button
-        className="carousel__button carousel__button-left"
-        onClick={handleLeftClick}
-      >
-        Prev
-      </button>
-      <button
-        className="carousel__button carousel__button-right"
-        onClick={handleRightClick}
-      >
-        Next
-      </button>
-    </>
-  );
-};
-
-const ReactPlayerCarousel: React.FC<{ images?: ImageType[]; options: any }> = ({
-  images,
-  options,
-}) => {
+/**
+ * Component for the React Player carousel.
+ * @component
+ * @param {Object} props - The component props.
+ * @param {ImageType[]} props.images - The array of images for the carousel.
+ * @param {Object} props.options - The options for the carousel.
+ * @returns {JSX.Element} The rendered component.
+ */
+const ReactPlayerCarousel = ({ images, options }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [selectedImage, setSelectedImage] = useState<ImageType>();
-  const [playing, setPlay] = useState(false);
-  //const carouselItemsRef = useRef<HTMLDivElement[] | null[]>([]);
+  const [selectedImage, setSelectedImage] = useState();
 
   useEffect(() => {
     if (images && images[0]) {
@@ -70,28 +20,26 @@ const ReactPlayerCarousel: React.FC<{ images?: ImageType[]; options: any }> = ({
     }
   }, [images]);
 
-  const handleSelectedImageChange = (newIdx: number) => {
+  const handleSelectedImageChange = (newIdx) => {
     if (images && images.length > 0) {
       setSelectedImage(images[newIdx]);
       setSelectedImageIndex(newIdx);
-      setPlay(true);
     }
   };
 
   return (
     <div className="carousel-container">
-      <h1 className="header"> Carousel</h1>
+      <h1 className="header">Carousel</h1>
       <div
         className="selected-image"
         style={{ backgroundImage: `url(${selectedImage?.url})` }}
       />
       <ReactPlayer
         className="react-player"
-        playing={playing}
+        playing
         controls
         onEnded={() => {
-          console.log("end");
-          handleRightClick();
+          handleSelectedImageChange((selectedImageIndex + 1) % (images?.length || 1));
         }}
         url={selectedImage?.url}
       />
@@ -111,9 +59,9 @@ const ReactPlayerCarousel: React.FC<{ images?: ImageType[]; options: any }> = ({
                 {options.thumbnail && (
                   <ReactPlayer
                     url={image.url}
-                    light={true}
-                    width={"150px"}
-                    height={"150px"}
+                    light
+                    width="150px"
+                    height="150px"
                     onClick={() => handleSelectedImageChange(idx)}
                     onClickPreview={() => handleSelectedImageChange(idx)}
                   />
