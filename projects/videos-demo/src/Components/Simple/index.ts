@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
-import ReactPlayer from "react-player";
-import PlayerContext from "../../playerContext";
+import React, { useState, useContext, useEffect } from 'react';
+import ReactPlayer from 'react-player';
+import PlayerContext from '../../playerContext';
 
 /**
  * SimplePlayer component.
@@ -38,7 +38,7 @@ const SimplePlayer = ({
 
     setContext([...context, { url: url, playing: playing }]);
 
-    console.log("CONTEXT VALUE", context, { url: url, playing: playing });
+    console.log('CONTEXT VALUE', context, { url: url, playing: playing });
   }, [url]);
 
   function setPlaying(url, context, setContext) {
@@ -49,22 +49,22 @@ const SimplePlayer = ({
         value.playing = false;
       }
     }
-    console.log("value!!", context);
+    console.log('value!!', context);
   }
 
   const handlePlay = () => {
     setPlaying(url, context, setContext);
-    console.log("onPlay", context);
+    console.log('onPlay', context);
     setState({ playing: true });
   };
 
   const handlePause = () => {
-    console.log("onPause");
+    console.log('onPause');
     setState({ playing: false });
   };
 
   const handleEnded = () => {
-    console.log("onEnded");
+    console.log('onEnded');
     setState({ playing: state.loop });
   };
 
@@ -75,7 +75,7 @@ const SimplePlayer = ({
   };
 
   const handleDuration = (duration) => {
-    console.log("onDuration", duration);
+    console.log('onDuration', duration);
     setState({ duration });
   };
 
@@ -99,14 +99,14 @@ const SimplePlayer = ({
         playing={state.playing}
         controls={state.controls}
         light={state.light}
-        onReady={() => console.log("onReady")}
-        onStart={() => console.log("onStart")}
+        onReady={() => console.log('onReady')}
+        onStart={() => console.log('onStart')}
         onPlay={handlePlay}
         onPause={handlePause}
-        onBuffer={() => console.log("onBuffer")}
-        onSeek={(e) => console.log("onSeek", e)}
+        onBuffer={() => console.log('onBuffer')}
+        onSeek={(e) => console.log('onSeek', e)}
         onEnded={handleEnded}
-        onError={(e) => console.log("onError", e)}
+        onError={(e) => console.log('onError', e)}
         onProgress={handleProgress}
         onDuration={handleDuration}
       />
