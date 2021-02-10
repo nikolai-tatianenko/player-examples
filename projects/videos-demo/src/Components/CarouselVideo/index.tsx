@@ -3,7 +3,7 @@ import ImageCarousel, { ImageType } from "./VideoCarousel";
 import CarouselControls from './CarouselControls';
 import "./styles.css";
 
-export default function App() {
+export default function ImageVideo() {
   const [useThumbnails, setUseThumbnails] = useState(true);
   const [images, setImages] = useState<ImageType[]>();
 

@@ -7,7 +7,7 @@ import "./styles.css";
  * @component
  * @returns {JSX.Element} The rendered component.
  */
-export default function App() {
+export default function ImageVideo() {
   /**
    * Generates an array of image objects.
    * @returns {ImageType[]} The array of image objects.

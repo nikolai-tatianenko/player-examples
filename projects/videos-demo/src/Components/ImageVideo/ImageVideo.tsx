@@ -1,9 +1,6 @@
-import "../../styles.css";
-import React, { useState } from "react";
-import { render } from "react-dom";
-import ReactPlayer from "react-player";
+import React, { useState } from 'react';
 
-const App = () => {
+const ImageVideo = () => {
   const [state, setState] = useState({});
   const {
     url,
@@ -19,23 +16,26 @@ const App = () => {
     playbackRate,
     pip,
   } = state;
-  const playVideos = { 0: false, 1: false };
+  const playVideos = {
+    0: false,
+    1: false,
+  };
   const handlePlay = () => {
-    console.log("onPlay");
+    console.log('onPlay');
     setState({ playing: true });
   };
 
   const handlePause = () => {
-    console.log("onPlay");
+    console.log('onPlay');
     setState({ playing: true });
   };
 
   const handleEnded = () => {
-    console.log("onEnded");
+    console.log('onEnded');
     setState({ playing: state.loop });
   };
   const handleProgress = (state) => {
-    console.log("onProgress", state);
+    console.log('onProgress', state);
     // We only want to update time slider if we are not currently seeking
     if (!state.seeking) {
       setState(state);
@@ -43,7 +43,7 @@ const App = () => {
   };
 
   const handleDuration = (duration) => {
-    console.log("onDuration", duration);
+    console.log('onDuration', duration);
     setState({ duration });
   };
 
@@ -53,16 +53,19 @@ const App = () => {
   };
 
   const handleStop = () => {
-    setState({ url: null, playing: false });
+    setState({
+      url: null,
+      playing: false,
+    });
   };
   /**
    * <button onClick={handleStop}>Stop</button>
-      <button onClick={handlePlayPause}>{playing ? "Pause" : "Play"}</button>
+   <button onClick={handlePlayPause}>{playing ? "Pause" : "Play"}</button>
    */
 
   return (
     <div>
-      <button onClick={handlePlayPause}>{playing ? "Pause" : "Play"}</button>
+      <button onClick={handlePlayPause}>{playing ? 'Pause' : 'Play'}</button>
       {playing && (
         <ReactPlayer
           url="https://vimeo.com/347119375"
@@ -70,14 +73,14 @@ const App = () => {
           light="false"
           playing={playing}
           controls
-          onReady={() => console.log("onReady")}
-          onStart={() => console.log("onStart")}
+          onReady={() => console.log('onReady')}
+          onStart={() => console.log('onStart')}
           onPlay={handlePlay}
           onPause={handlePause}
-          onBuffer={() => console.log("onBuffer")}
-          onSeek={(e) => console.log("onSeek", e)}
+          onBuffer={() => console.log('onBuffer')}
+          onSeek={(e) => console.log('onSeek', e)}
           onEnded={handleEnded}
-          onError={(e) => console.log("onError", e)}
+          onError={(e) => console.log('onError', e)}
           onProgress={handleProgress}
           onDuration={handleDuration}
         />
@@ -85,5 +88,4 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
+export default ImageVideo;
