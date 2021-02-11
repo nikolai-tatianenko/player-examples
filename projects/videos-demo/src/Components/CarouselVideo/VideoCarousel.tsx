@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import ReactPlayer from "react-player";
+import React, { useEffect, useState } from 'react';
+import ReactPlayer from 'react-player';
 
 /**
  * Component for the React Player carousel.
@@ -54,7 +54,7 @@ const ReactPlayerCarousel = ({ images, options }) => {
                 style={{ backgroundImage: `url(${image.url})` }}
                 key={image.id}
                 className={`carousel__image ${
-                  selectedImageIndex === idx && "carousel__image-selected"
+                  selectedImageIndex === idx && 'carousel__image-selected'
                 }`}
               >
                 <h2 className="thumbnail-title">{image.title}</h2>
