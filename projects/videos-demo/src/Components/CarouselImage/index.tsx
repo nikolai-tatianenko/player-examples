@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import ImageCarousel, { ImageType } from "./ImageCarousel";
-import "./styles.css";
+import { useEffect, useState } from 'react';
+import ImageCarousel, { ImageType } from './ImageCarousel';
+import './styles.css';
 
 /**
  * Main application component.

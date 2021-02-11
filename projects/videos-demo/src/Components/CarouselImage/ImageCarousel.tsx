@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
 export type ImageType = { id: number; url: string };
 
@@ -29,7 +29,7 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
     setSelectedImage(images?.[newIdx]);
     setSelectedImageIndex(newIdx);
     const selectedElement = carouselItemsRef.current[newIdx];
-    selectedElement?.scrollIntoView({ inline: "center", behavior: "smooth" });
+    selectedElement?.scrollIntoView({ inline: 'center', behavior: 'smooth' });
   };
 
   const handleRightClick = () => {
@@ -58,7 +58,7 @@ const ImageCarousel: React.FC<{ images?: ImageType[] }> = ({ images }) => {
               style={{ backgroundImage: `url(${image.url})` }}
               key={image.id}
               className={`carousel__image ${
-                selectedImageIndex === idx && "carousel__image-selected"
+                selectedImageIndex === idx && 'carousel__image-selected'
               }`}
               ref={(el) => (carouselItemsRef.current[idx] = el)}
             />
