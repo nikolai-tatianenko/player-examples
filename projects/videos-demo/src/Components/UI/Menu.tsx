@@ -1,17 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 /**
  * Default menu items for the Menu component.
  * Each item consists of a path and label.
  */
 const menuItemsDefault = [
-  { path: "/", label: "Home" },
-  { path: "/modal", label: "Modal" },
-  { path: "/custom-controls", label: "With Custom Controls" },
-  { path: "/videos", label: "2 videos" },
-  { path: "/default-demo", label: "Default Demo" },
-  { path: "/carousel", label: "Carousel" },
+  { path: '/', label: 'Home' },
+  { path: '/modal', label: 'Modal' },
+  { path: '/custom-controls', label: 'With Custom Controls' },
+  { path: '/videos', label: '2 videos' },
+  { path: '/default-demo', label: 'Default Demo' },
+  { path: '/carousel', label: 'Carousel' },
 ];
 
 /**

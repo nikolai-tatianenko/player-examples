@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import Player from "./reactPlayer";
-import "./styles.css";
+import React, { useState } from 'react';
+import Player from './reactPlayer';
+import './styles.css';
 const ModalPlayer = (props) => {
   const [state, setState] = useState({ open: false });
 
