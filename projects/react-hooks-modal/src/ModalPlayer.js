@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import ReactPlayer from "react-player";
-import "react-responsive-modal/styles.css";
-import { Modal } from "react-responsive-modal";
+import React, { useState } from 'react';
+import ReactPlayer from 'react-player';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
 
 const ModalButton = ({ thumbnailType, url, toggleModal }) => {
-  if (typeof thumbnailType === "string") {
+  if (typeof thumbnailType === 'string') {
     return <img src={thumbnailType} onClick={toggleModal} />;
   } else {
     return <button onClick={toggleModal}>Play Video </button>;
@@ -13,7 +13,7 @@ const ModalButton = ({ thumbnailType, url, toggleModal }) => {
 
 const Player = ({ url, thumbnailType = false }) => {
   const [open, setOpen] = useState(false);
-  console.log("state", open);
+  console.log('state', open);
   const toggleModal = () => setOpen(!open);
 
   return (
@@ -28,22 +28,22 @@ const Player = ({ url, thumbnailType = false }) => {
         onClose={toggleModal}
         styles={{
           modal: {
-            maxWidth: "unset",
-            width: "100%",
-            padding: "unset",
+            maxWidth: 'unset',
+            width: '100%',
+            padding: 'unset',
           },
           overlay: {
-            background: "rgba(0, 0, 0, 0.5)",
+            background: 'rgba(0, 0, 0, 0.5)',
           },
           closeButton: {
-            background: "red",
-            color: "white",
+            background: 'red',
+            color: 'white',
           },
         }}
         center
       >
         <ReactPlayer
-          key={"modalPlayer"}
+          key={'modalPlayer'}
           controls={true}
           playing={true}
           url={url}
