@@ -6,12 +6,20 @@
     "@commitlint/config-conventional": "^12.0.0"
   },
   "scripts": {
-    "lint": "npx --fix eslint .",
-    "format": "npx prettier --write .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --fix .",
+    "lint:commit": "commitlint --edit",
+    "format": "prettier --write .",
+    "format:style": "npm run format",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": ""
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }
